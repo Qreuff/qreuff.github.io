@@ -11,44 +11,73 @@
       background: #0099ff;
       overflow-x: hidden;
       position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+      box-sizing: border-box;
     }
 
     .resume {
       padding: 40px;
-      color: white;
+      color: black;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+      max-width: 600px;
+      width: 100%;
+      text-align: center;
     }
 
     .resume section, .resume header, .resume footer {
       margin-bottom: 20px;
+      background: white;
+      padding: 15px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+      max-width: 400px;
+      margin-left: auto;
+      margin-right: auto;
     }
 
     .field-label {
       font-weight: bold;
-      margin-bottom: 5px;
+      margin-bottom: 10px;
       display: block;
+      color: #0099ff;
+      font-size: 18px;
     }
 
     .field-input {
       display: block;
       width: 100%;
       min-height: 30px;
-      padding: 5px;
-      border: 1px solid #ccc;
+      padding: 8px;
+      border: 1px solid #ddd;
       border-radius: 5px;
       margin-bottom: 10px;
-      background: rgba(255, 255, 255, 0.1);
-      color: white;
+      background: white;
+      color: black;
+      text-align: center;
     }
 
     #downloadBtn {
-      margin-top: 20px;
-      padding: 10px 20px;
-      background-color: #ffffff;
-      color: #0099ff;
+      margin-top: 30px;
+      padding: 12px 25px;
+      background-color: #0099ff;
+      color: white;
       border: none;
       border-radius: 5px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 16px;
+      transition: all 0.3s;
+    }
+
+    #downloadBtn:hover {
+      background-color: #0077cc;
+      transform: translateY(-2px);
     }
 
     /* ВОЛНА */
@@ -72,6 +101,17 @@
         background-position-x: 1000px;
       }
     }
+
+    header {
+      border-bottom: 2px solid #0099ff;
+      padding-bottom: 20px;
+    }
+
+    #name {
+      font-size: 24px;
+      font-weight: bold;
+      margin-top: 10px;
+    }
   </style>
 </head>
 <body>
@@ -79,7 +119,7 @@
     <!-- Имя и Фамилия -->
     <header>
       <span class="field-label">Имя Фамилия</span>
-      <div class="field-input" contenteditable="true" id="name">Савенков Анатолий</div>
+      <div class="field-input" contenteditable="true" id="name">Свинской Анатолий</div>
     </header>
 
     <!-- Краткая информация -->
