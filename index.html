@@ -5,16 +5,63 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Моё Резюме</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .resume section, .resume header, .resume footer {
+      margin-bottom: 20px;
+    }
+
+    .field-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .field-input {
+      display: block;
+      width: 100%;
+      min-height: 30px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+    }
+  </style>
 </head>
 <body>
   <div class="resume">
-    <header contenteditable="true" id="name">Имя Фамилия</header>
-    <section contenteditable="true" id="summary">Краткая информация о себе</section>
-    <section contenteditable="true" id="experience">Опыт работы</section>
-    <section contenteditable="true" id="education">Образование</section>
-    <footer contenteditable="true" id="contacts">Контакты</footer>
+    <Савенков Анатолий>
+    <header>
+      <span class="field-label">Имя Фамилия</span>
+      <div class="field-input" contenteditable="true" id="name">Введите имя и фамилию</div>
+    </header>
+
+    <Frontend-разработчик>
+    <section>
+      <span class="field-label">Краткая информация о себе</span>
+      <div class="field-input" contenteditable="true" id="summary">Введите краткое описание</div>
+    </section>
+
+    <20 лет работы в Google>
+    <section>
+      <span class="field-label">Опыт работы</span>
+      <div class="field-input" contenteditable="true" id="experience">Опишите ваш опыт</div>
+    </section>
+
+    <Высшее образование Oxford>
+    <section>
+      <span class="field-label">Образование</span>
+      <div class="field-input" contenteditable="true" id="education">Укажите образование</div>
+    </section>
+
+    <Мой номер: +7 123 000 00 00>
+    <footer>
+      <span class="field-label">Контакты</span>
+      <div class="field-input" contenteditable="true" id="contacts">Добавьте контакты</div>
+    </footer>
+
     <button id="downloadBtn" class="ripple-target">Скачать PDF</button>
   </div>
+
   <script src="script.js"></script>
 </body>
 </html>
