@@ -1,102 +1,117 @@
-body {
- margin: 0;
-  background: #0099ff;
-  overflow: hidden;
-}
-
-.wave {
-  position: absolute;
-  width: 100%;
-  height: 100px;
-  bottom: 0;
-  left: 0;
-  background: url('https://svgshare.com/i/uLZ.svg') repeat-x;
-  background-size: cover;
-  animation: waveMove 10s linear infinite;
-}
-
-@keyframes waveMove {
-  from {
-    background-position-x: 0;
-  }
-  to {
-    background-position-x: 1000px;
-  }
-}
-
-    
-    font-family: Arial, sans-serif;
-    background: #f9f9f9;
-    margin: 0;
-    padding: 20px;
-  }
-  
-  .resume {
-    max-width: 800px;
-    margin: auto;
-    background: white;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-  }
-  
-  header, section, footer {
-    margin-bottom: 20px;
-    padding: 10px;
-    border-left: 4px solid #2196f3;
-  }
-  
-  [contenteditable]:focus {
-    animation: edit-glow 0.3s ease-in-out;
-    outline: none;
-    background-color: #e3f2fd;
-  }
-  
-  @keyframes edit-glow {
-    from { background-color: #bbdefb; }
-    to { background-color: #e3f2fd; }
-  }
-  
-  button {
-    padding: 10px 20px;
-    border: none;
-    background-color: #2196f3;
-    color: white;
-    border-radius: 8px;
-    font-size: 16px;
-    cursor: pointer;
-    position: relative;
-    overflow: hidden;
-  }
-  
-  button:active {
-    opacity: 0.9;
-  }
-  
-  /* Ripple effect */
-  .ripple {
-    position: absolute;
-    border-radius: 50%;
-    transform: scale(0);
-    animation: ripple-animation 0.6s linear;
-    background-color: rgba(255, 255, 255, 0.7);
-    pointer-events: none;
-  }
-  
-  @keyframes ripple-animation {
-    to {
-      transform: scale(4);
-      opacity: 0;
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Моё Резюме</title>
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    body {
+      margin: 0;
+      background: #0099ff;
+      overflow-x: hidden;
+      position: relative;
     }
-  }
-  
-  /* Адаптивность */
-  @media (max-width: 600px) {
+
     .resume {
-      padding: 15px;
+      padding: 40px;
+      color: white;
     }
-    button {
+
+    .resume section, .resume header, .resume footer {
+      margin-bottom: 20px;
+    }
+
+    .field-label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+    }
+
+    .field-input {
+      display: block;
       width: 100%;
+      min-height: 30px;
+      padding: 5px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-bottom: 10px;
+      background: rgba(255, 255, 255, 0.1);
+      color: white;
     }
-  }
-  
+
+    #downloadBtn {
+      margin-top: 20px;
+      padding: 10px 20px;
+      background-color: #ffffff;
+      color: #0099ff;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    /* ВОЛНА */
+    .wave {
+      position: absolute;
+      width: 100%;
+      height: 120px;
+      bottom: 0;
+      left: 0;
+      background: url('https://svgshare.com/i/uLZ.svg') repeat-x;
+      background-size: contain;
+      animation: waveMove 10s linear infinite;
+      z-index: -1;
+    }
+
+    @keyframes waveMove {
+      0% {
+        background-position-x: 0;
+      }
+      100% {
+        background-position-x: 1000px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume">
+    <!-- Имя и Фамилия -->
+    <header>
+      <span class="field-label">Имя Фамилия</span>
+      <div class="field-input" contenteditable="true" id="name">Савенков Анатолий</div>
+    </header>
+
+    <!-- Краткая информация -->
+    <section>
+      <span class="field-label">Краткая информация о себе</span>
+      <div class="field-input" contenteditable="true" id="summary">Frontend-разработчик</div>
+    </section>
+
+    <!-- Опыт работы -->
+    <section>
+      <span class="field-label">Опыт работы</span>
+      <div class="field-input" contenteditable="true" id="experience">20 лет работы в Google</div>
+    </section>
+
+    <!-- Образование -->
+    <section>
+      <span class="field-label">Образование</span>
+      <div class="field-input" contenteditable="true" id="education">2 Высших образования Oxford</div>
+    </section>
+
+    <!-- Контакты -->
+    <footer>
+      <span class="field-label">Контакты</span>
+      <div class="field-input" contenteditable="true" id="contacts">+7 123 000 00 00</div>
+    </footer>
+
+    <button id="downloadBtn" class="ripple-target">Скачать PDF</button>
+  </div>
+
+  <!-- Волна -->
+  <div class="wave"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
